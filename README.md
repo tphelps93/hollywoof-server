@@ -1,26 +1,30 @@
-# Express Boilerplate!
+# HollyWoof Server
+##### Repositories    
+Server Repo: https://github.com/tphelps93/hollywoof-server
+Client Repo: https://github.com/tphelps93/hollywoof-client
 
-This is a boilerplate project used for starting new projects!
+##### Live Links 
+Vercel Client - Live Link 
+Heroku Server - Live Link
 
-## Set up
+## Summary
+I'll set the scene. You get home after a long day of work, make your dinner, and sit down with your dog to watch your favorite TV show. Half way through, a dog begins barking on the TV. You struggle to mute the tv as not to alert your dog. Alas, the dog has been disturbed and is now
+barking at the top of its lungs and it takes forever to calm it down. Your nice, quiet evening is interrupted. 
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+Enter HollyWoof. This is an application that will allow users to register, login, report and view movies or shows that contain dog barks, and even set a timestamp and a volume level for the occurrence. That way you can be prepared the next time a dog is about to bark on tv.
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
 
-## Scripts
-
-Start the application `npm start`
-
-Start nodemon for the application `npm run dev`
-
-Run the tests `npm test`
-
-## Deploying
-
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's master branch.
+## Technologies Used
+##### FrontEnd
+* JavaScript
+* React
+* React-Router
+* Context
+##### Backend
+* NodeJs
+* Express
+* Knex
+* CORS
+* Chai, Mocha, supertest (testing)
+##### Server
+* PostgreSQL
