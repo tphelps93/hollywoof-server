@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const logger = require('../logger');
 const TSService = require('./timestamps-service');
 const { requireAuth } = require('../middleware/jwt-auth');
 
@@ -37,6 +38,8 @@ tsRouter
 
     for (const field of ['timestamp', 'comment', 'volume', 'media_id']) {
       if (!newTS[field]) {
+        logger.error(`${field} is required`);
+
         return res.status(400).send({
           error: { message: `'${field}' is required` },
         });
@@ -47,6 +50,8 @@ tsRouter
 
     return TSService.insertTS(req.app.get('db'), newTS)
       .then(timestamp => {
+        logger.info(`Timestamp with id ${timestamp.ts_id}`);
+
         res
           .status(201)
           .location(path.posix.join(req.originalUrl, `/${timestamp.ts_id}`))
@@ -63,6 +68,7 @@ tsRouter
     TSService.getById(req.app.get('db'), ts_id)
       .then(timestamp => {
         if (!timestamp) {
+          logger.error(`Timestamp with id ${ts_id} not found.`);
           return res.status(404).json({
             error: { message: 'Timestamp not found' },
           });
@@ -79,6 +85,7 @@ tsRouter
     const { ts_id } = req.params;
     TSService.deleteTS(req.app.get('db'), ts_id)
       .then(numRowsAffected => {
+        logger.info(`Timestamp with id ${ts_id} deleted.`);
         res.status(204).end();
       })
       .catch(next);
@@ -91,6 +98,7 @@ tsRouter
     const numOfValues = Object.values(timestampToUpdate).filter(Boolean).length;
 
     if (numOfValues === 0) {
+      logger.error('Invalid update without required fields');
       return res.status(400).json({
         error: {
           message:
