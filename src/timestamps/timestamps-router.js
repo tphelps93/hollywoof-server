@@ -16,6 +16,8 @@ const serializeTimestamp = timestamp => ({
   userid: timestamp.userid,
   date_created: timestamp.date_created,
 });
+// look at how the Authorization is flowing
+// If anything in context.props check if it's following the flow
 
 tsRouter
   .route('/')
@@ -27,7 +29,7 @@ tsRouter
       .catch(next);
   })
   .post(requireAuth, jsonBodyParser, (req, res, next) => {
-    const { ts_id, timestamp, comment, volume, media_id, userid } = req.body;
+    const { timestamp, comment, volume, media_id, userid } = req.body;
     const newTS = {
       timestamp,
       comment,

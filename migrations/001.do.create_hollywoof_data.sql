@@ -27,6 +27,7 @@ CREATE TABLE hw_timestamps (
     timestamp TIME(0) NOT NULL,
     comment TEXT NOT NULL,
     volume volume_lvl NOT NULL,
+    confirmations INTEGER,
     media_id TEXT NOT NULL,
     userId INTEGER REFERENCES hw_users(user_id) ON DELETE CASCADE NULL,
     date_created TIMESTAMPTZ DEFAULT now() NOT NULL

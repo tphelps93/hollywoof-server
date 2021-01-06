@@ -1,11 +1,12 @@
 const AuthService = require('../auth/auth-service');
 
 function requireAuth(req, res, next) {
+  // console.log(Object.keys(req));
   const authToken = req.get('Authorization') || '';
 
   let bearerToken;
   if (!authToken.toLowerCase().startsWith('bearer ')) {
-    return res.status(401).json({ error: 'Missing bearer token' });
+    return res.status(401).json({ error: `Missing bearer token: ${authToken}` });
   } else {
     bearerToken = authToken.slice(7, authToken.length);
   }
