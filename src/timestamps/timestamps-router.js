@@ -12,12 +12,11 @@ const serializeTimestamp = timestamp => ({
   timestamp: timestamp.timestamp,
   comment: timestamp.comment,
   volume: timestamp.volume,
+  confirmations: timestamp.confirmations,
   media_id: timestamp.media_id,
   userid: timestamp.userid,
   date_created: timestamp.date_created,
 });
-// look at how the Authorization is flowing
-// If anything in context.props check if it's following the flow
 
 tsRouter
   .route('/')
@@ -29,11 +28,19 @@ tsRouter
       .catch(next);
   })
   .post(requireAuth, jsonBodyParser, (req, res, next) => {
-    const { timestamp, comment, volume, media_id, userid } = req.body;
+    const {
+      timestamp,
+      comment,
+      volume,
+      confirmations,
+      media_id,
+      userid,
+    } = req.body;
     const newTS = {
       timestamp,
       comment,
       volume,
+      confirmations,
       media_id,
       userid,
     };
@@ -93,9 +100,12 @@ tsRouter
       .catch(next);
   })
   .patch(requireAuth, jsonBodyParser, (req, res, next) => {
-    const { timestamp, comment, volume } = req.body;
+    const { ts_id, timestamp, comment, volume, confirmations } = req.body;
 
-    const timestampToUpdate = { timestamp, comment, volume };
+    const timestampToUpdate = {
+      ts_id,
+      confirmations,
+    };
 
     const numOfValues = Object.values(timestampToUpdate).filter(Boolean).length;
 
@@ -104,14 +114,14 @@ tsRouter
       return res.status(400).json({
         error: {
           message:
-            'Request body must contain either "timestamp", "comment", "volume"',
+            'Request body must contain either "timestamp", "comment", "volume", "confirmations"',
         },
       });
     }
 
     TSService.updateTS(req.app.get('db'), req.params.ts_id, timestampToUpdate)
       .then(numRowsAffected => {
-        res.status(204).end();
+        return res.status(204).end();
       })
       .catch(next);
   });

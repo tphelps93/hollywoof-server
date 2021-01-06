@@ -10,3 +10,21 @@
 {"message":"Timestamp with id 13","level":"info"}
 {"message":"Timestamp with id 14","level":"info"}
 {"message":"Timestamp with id 15","level":"info"}
+{"message":"Timestamp with id 4","level":"info"}
+{"message":"media_id is required","level":"error"}
+{"message":"Timestamp with id 5","level":"info"}
+{"message":"Timestamp with id 6","level":"info"}
+{"message":"Timestamp with id 4","level":"info"}
+{"message":"Invalid update without required fields","level":"error"}
+{"message":"Invalid update without required fields","level":"error"}
+{"message":"Invalid update without required fields","level":"error"}
+{"message":"Invalid update without required fields","level":"error"}
+{"message":"Invalid update without required fields","level":"error"}
+{"message":"Invalid update without required fields","level":"error"}
+{"message":"Invalid update without required fields","level":"error"}
+{"message":"Invalid update without required fields","level":"error"}
+{"message":"Invalid update without required fields","level":"error"}
+{"message":"Invalid update without required fields","level":"error"}
+{"message":"Invalid update without required fields","level":"error"}
+{"message":"Invalid update without required fields","level":"error"}
+{"message":"Invalid update without required fields","level":"error"}
