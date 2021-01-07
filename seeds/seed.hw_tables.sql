@@ -7,13 +7,13 @@ TRUNCATE
     RESTART IDENTITY CASCADE;
 
 
-insert into hw_users (user_id, name, user_name, password) values (1, 'Maryanne Errey', 'merrey0', '$2a$12$rbmLFCNIs3w/jntWJp7T5OaCcD6M4APSCMshfQOczq8Fi3o4A4W46');
+insert into hw_users (user_id, name, user_name, password) values (1, 'Bob Blue', 'bblue', '$2a$12$rbmLFCNIs3w/jntWJp7T5OaCcD6M4APSCMshfQOczq8Fi3o4A4W46');
 
 SELECT setval('hw_users_user_id_seq', max(user_id)) FROM hw_users;
 
-insert into hw_barks (bark_id, barks) values (1, true);
-insert into hw_barks (bark_id, barks) values (2, false);
-insert into hw_barks (bark_id, barks) values (3, true);
+insert into hw_barks (bark_id, barks, media_id) values (1, 'Yes', 'tt9397902');
+insert into hw_barks (bark_id, barks, media_id) values (2, 'No', 'tt7716370');
+insert into hw_barks (bark_id, barks, media_id) values (3, 'Not Reported', 'tt4269462');
 
 SELECT setval('hw_barks_bark_id_seq', max(bark_id)) FROM hw_barks;
 

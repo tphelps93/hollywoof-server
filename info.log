@@ -28,3 +28,13 @@
 {"message":"Invalid update without required fields","level":"error"}
 {"message":"Invalid update without required fields","level":"error"}
 {"message":"Invalid update without required fields","level":"error"}
+{"message":"Timestamp with id 4","level":"info"}
+{"message":"Timestamp with id 4","level":"info"}
+{"message":"Timestamp with id 4","level":"info"}
+{"message":"Bark with id 4 deleted.","level":"info"}
+{"message":"Bark with id 2 deleted.","level":"info"}
+{"message":"Bark with id 3 deleted.","level":"info"}
+{"message":"barks is required","level":"error"}
+{"message":"'barks' is required","level":"error"}
+{"message":"Bark with id 5","level":"info"}
+{"message":"'barks' is required","level":"error"}
