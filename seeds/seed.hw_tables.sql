@@ -17,9 +17,9 @@ insert into hw_barks (bark_id, barks, media_id) values (3, 'Not Reported', 'tt42
 
 SELECT setval('hw_barks_bark_id_seq', max(bark_id)) FROM hw_barks;
 
-insert into hw_timestamps (ts_id, timestamp, comment, volume, confirmations, media_id, userId) values (1, '01:25:00', 'Crazy Loud', 'High', 0, 'tt9397902', 1);
-insert into hw_timestamps (ts_id, timestamp, comment, volume, confirmations, media_id, userId) values (2, '03:25:00', 'Not too loud', 'Low', 0, 'tt9397902', 1);
-insert into hw_timestamps (ts_id, timestamp, comment, volume, confirmations, media_id, userId) values (3, '03:25:32', 'Kinda Loud', 'Medium', 0, 'tt9397902', 1);
+insert into hw_timestamps (ts_id, timestamp, comment, volume, confirmations, likes, dislikes, media_id, userId) values (1, '01:25:00', 'Crazy Loud', 'High', 0, 0, 0, 'tt9397902', 1);
+insert into hw_timestamps (ts_id, timestamp, comment, volume, confirmations, likes, dislikes, media_id, userId) values (2, '03:25:00', 'Not too loud', 'Low', 0, 0, 0,'tt9397902', 1);
+insert into hw_timestamps (ts_id, timestamp, comment, volume, confirmations, likes, dislikes, media_id, userId) values (3, '03:25:32', 'Kinda Loud', 'Medium', 0, 0, 0, 'tt9397902', 1);
 
 SELECT setval('hw_timestamps_ts_id_seq', max(ts_id)) FROM hw_timestamps;
 
