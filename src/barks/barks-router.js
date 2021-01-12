@@ -39,7 +39,6 @@ barkRouter
       }
     }
 
-
     return BarksService.insertBark(req.app.get('db'), newBark)
       .then(bark => {
         logger.info(`Bark with id ${bark.bark_id}`);
@@ -73,22 +72,13 @@ barkRouter
   .get((req, res) => {
     res.json(serializeBark(res.bark));
   })
-  .delete(requireAuth, (req, res, next) => {
-    const { bark_id } = req.params;
-    BarksService.deleteBark(req.app.get('db'), bark_id)
-      .then(numRowsAffected => {
-        logger.info(`Bark with id ${bark_id} deleted.`);
-        res.status(204).end();
-      })
-      .catch(next);
-  })
   .patch(requireAuth, jsonBodyParser, (req, res, next) => {
     const { bark_id, barks, media_id } = req.body;
 
     const barkToUpdate = {
       bark_id,
       barks,
-      media_id
+      media_id,
     };
 
     const numOfValues = Object.values(barkToUpdate).filter(Boolean).length;

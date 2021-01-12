@@ -13,9 +13,12 @@ const serializeTimestamp = timestamp => ({
   comment: timestamp.comment,
   volume: timestamp.volume,
   confirmations: timestamp.confirmations,
+  likes: timestamp.likes,
+  dislikes: timestamp.dislikes,
   media_id: timestamp.media_id,
   userid: timestamp.userid,
   date_created: timestamp.date_created,
+  user_name: timestamp.user_name,
 });
 
 tsRouter
@@ -33,6 +36,8 @@ tsRouter
       comment,
       volume,
       confirmations,
+      likes,
+      dislikes,
       media_id,
       userid,
     } = req.body;
@@ -41,6 +46,8 @@ tsRouter
       comment,
       volume,
       confirmations,
+      likes,
+      dislikes,
       media_id,
       userid,
     };
@@ -100,11 +107,13 @@ tsRouter
       .catch(next);
   })
   .patch(requireAuth, jsonBodyParser, (req, res, next) => {
-    const { ts_id, timestamp, comment, volume, confirmations } = req.body;
+    const { ts_id, timestamp, comment, volume, likes, dislikes, confirmations } = req.body;
 
     const timestampToUpdate = {
       ts_id,
       confirmations,
+      likes,
+      dislikes,
     };
 
     const numOfValues = Object.values(timestampToUpdate).filter(Boolean).length;

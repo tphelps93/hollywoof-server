@@ -1,6 +1,6 @@
 const TSService = {
   getAllTS(db) {
-    return db.select('*').from('hw_timestamps');
+    return db.select('hw_timestamps.*', 'hw_users.user_name').from('hw_timestamps').join('hw_users', 'hw_users.user_id', 'hw_timestamps.userid');
   },
   insertTS(db, newTS) {
     return db
