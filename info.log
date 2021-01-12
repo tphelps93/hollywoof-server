@@ -49,3 +49,5 @@
 {"message":"Timestamp with id 6 deleted.","level":"info"}
 {"message":"Timestamp with id 4 deleted.","level":"info"}
 {"message":"Timestamp with id 5 deleted.","level":"info"}
+{"message":"Timestamp with id 1","level":"info"}
+{"message":"Bark with id 1","level":"info"}
