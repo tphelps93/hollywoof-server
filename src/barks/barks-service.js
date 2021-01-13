@@ -10,6 +10,10 @@ const BarksService = {
       .then(([ts]) => ts);
   },
 
+  getById(db, bark_id) {
+    return db.from('hw_barks').select('*').where('bark_id', bark_id).first();
+  },
+
   updateBark(db, bark_id, newBarkFields) {
     return db('hw_barks').where({ bark_id }).update(newBarkFields);
   },

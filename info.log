@@ -61,3 +61,17 @@
 {"message":"Bark with id 6","level":"info"}
 {"message":"Bark with id 7","level":"info"}
 {"message":"Timestamp with id 3","level":"info"}
+{"message":"Timestamp with id 3 deleted.","level":"info"}
+{"message":"comment is required","level":"error"}
+{"message":"comment is required","level":"error"}
+{"message":"comment is required","level":"error"}
+{"message":"comment is required","level":"error"}
+{"message":"comment is required","level":"error"}
+{"message":"comment is required","level":"error"}
+{"message":"comment is required","level":"error"}
+{"message":"comment is required","level":"error"}
+{"message":"comment is required","level":"error"}
+{"message":"comment is required","level":"error"}
+{"message":"comment is required","level":"error"}
+{"message":"comment is required","level":"error"}
+{"message":"comment is required","level":"error"}
