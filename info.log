@@ -51,3 +51,13 @@
 {"message":"Timestamp with id 5 deleted.","level":"info"}
 {"message":"Timestamp with id 1","level":"info"}
 {"message":"Bark with id 1","level":"info"}
+{"message":"Bark with id 2","level":"info"}
+{"message":"Bark with id 3","level":"info"}
+{"message":"Bark with id 4","level":"info"}
+{"message":"Bark with id 5","level":"info"}
+{"message":"Timestamp with id 2","level":"info"}
+{"message":"Timestamp with id 1 deleted.","level":"info"}
+{"message":"Timestamp with id 2 deleted.","level":"info"}
+{"message":"Bark with id 6","level":"info"}
+{"message":"Bark with id 7","level":"info"}
+{"message":"Timestamp with id 3","level":"info"}

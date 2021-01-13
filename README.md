@@ -14,6 +14,8 @@ barking at the top of its lungs and it takes forever to calm it down. Your nice,
 Enter HollyWoof. This is an application that will allow users to register, login, report and view movies or shows that contain dog barks, and even set a timestamp and a volume level for the occurrence. That way you can be prepared the next time a dog is about to bark on tv.
 
 
+![image](https://user-images.githubusercontent.com/55715053/104391907-f6982000-550e-11eb-8b72-f7ef17f44d29.png)
+
 ## Technologies Used
 ##### FrontEnd
 * JavaScript
