@@ -4,8 +4,8 @@ Server Repo: https://github.com/tphelps93/hollywoof-server
 Client Repo: https://github.com/tphelps93/hollywoof-client
 
 ##### Live Links 
-Vercel Client - Live Link 
-Heroku Server - Live Link
+Vercel Client - Live Link - https://hollywoof.xyz/
+Heroku Server - Live Link - https://hollywoof-database.herokuapp.com/api/users
 
 ## Summary
 I'll set the scene. You get home after a long day of work, make your dinner, and sit down with your dog to watch your favorite TV show. Half way through, a dog begins barking on the TV. You struggle to mute the tv as not to alert your dog. Alas, the dog has been disturbed and is now

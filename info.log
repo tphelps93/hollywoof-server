@@ -75,3 +75,4 @@
 {"message":"comment is required","level":"error"}
 {"message":"comment is required","level":"error"}
 {"message":"comment is required","level":"error"}
+{"message":"Bark with id 8","level":"info"}
