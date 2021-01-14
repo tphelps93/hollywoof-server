@@ -13,6 +13,12 @@ const UsersService = {
       .returning('*')
       .then(([user]) => user);
   },
+  getById(db, user_id) {
+    return db.from('hw_users').select('*').where('user_id', user_id).first();
+  },
+  deleteUser(db, user_id) {
+    return db('hw_users').where({ user_id }).delete();
+  },
   validatePassword(password) {
     if (password.length < 8) {
       return 'Password must be longer than 8 characters';

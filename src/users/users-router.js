@@ -1,8 +1,7 @@
 // Dependency Imports
 const express = require('express');
 const path = require('path');
-
-// const logger = require('../logger');
+const logger = require('../logger');
 
 // Service Imports
 const UsersService = require('./users-service');
@@ -41,8 +40,8 @@ usersRouter
 
     if (passwordError) return res.status(400).json({ error: passwordError });
 
-    UsersService.hasUserWithUserName(req.app.get('db'), user_name).then(
-      hasUserWithUserName => {
+    UsersService.hasUserWithUserName(req.app.get('db'), user_name)
+      .then(hasUserWithUserName => {
         if (hasUserWithUserName)
           return res.status(400).json({ error: 'Username already taken' });
 
@@ -62,8 +61,40 @@ usersRouter
             }
           );
         });
-      }
-    );
+      })
+      .catch(next);
+  });
+
+usersRouter
+  .route('/:user_id')
+  .all((req, res, next) => {
+    const { user_id } = req.params;
+
+    UsersService.getById(req.app.get('db'), user_id)
+      .then(user => {
+        if (!user) {
+          logger.error(`User with id ${user_id} not found.`);
+          return res.status(404).json({
+            error: { message: `User Not Found` },
+          });
+        }
+        res.user = user;
+        next();
+      })
+      .catch(next);
+  })
+  .get((req, res) => {
+    res.json(serializeUser(res.user));
+  })
+
+  .delete((req, res, next) => {
+    const { user_id } = req.params;
+    UsersService.deleteUser(req.app.get('db'), user_id)
+      .then(numRowsAffected => {
+        logger.info(`User with id ${user_id} deleted.`);
+        res.status(204).end();
+      })
+      .catch(next);
   });
 
 module.exports = usersRouter;
